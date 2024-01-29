@@ -10,12 +10,30 @@
 </head>
 
 <body>
+    <header>
+        <nav>
+            <h1 class="px-4 py-2 text-uppercase">Boolflix</h1>
+        </nav>
+
+    </header>
     <div class="container py-5">
-        <header>
+        <main>
             <div class="d-flex justify-content-center">
-                <h1>Movies</h1>
+                <h2 class="mb-3">Movies</h1>
             </div>
-        </header>
+
+            <div class="d-flex gap-2 justify-content-center flex-wrap">
+                @foreach ($movies as $movie)
+                <div class="card col-4 p-3">
+                    <h3>{{$movie['original_title']}}</h2>
+                        <p>Nation: {{$movie['nationality']}}</p>
+                        <p>Release date:{{$movie['date']}}</p>
+                        <p>Vote:{{$movie['vote']}}</p>
+
+                </div>
+                @endforeach
+            </div>
+        </main>
     </div>
 
 </body>
